@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import './App.css';
-
 //IMPORTS FROM REACT
+import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+
+//STYLING IMPORTS
+import './App.css';
 
 //JSX COMPONENTS
 import Start from '../Start/Start';
@@ -23,15 +23,14 @@ class App extends Component {
           <header className="App-header">
             <h1 className="App-title">Feedback!</h1>
           </header>
-          <br />
+          <Route exact path="/" component={Start} />
+          <Route path="/feeling" component={Feeling} />
+          <Route path="/understanding" component={Understanding} />
+          <Route path="/support" component={Support} />
+          <Route path="/comments" component={Comments} />
+          <Route path="/review" component={Review} />
+          <Route path="/submit" component={Submit} />
         </div>
-        <Route exact path="/" component={Start} />
-        <Route path="/feeling" component={Feeling} />
-        <Route path="/understanding" component={Understanding} />
-        <Route path="/support" component={Support} />
-        <Route path="/comments" component={Comments} />
-        <Route path="/review" component={Review} />
-        <Route path="/submit" component={Submit} />
       </Router>
     );
   }
