@@ -1,21 +1,38 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Comments extends Component {
-  handleClick = () => {
+  state = {
+    comments: ''
+  };
+
+  handleChange = event => {
+    this.setState({
+      comments: event.target.value
+    });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    console.log(this.state.comments);
+    this.props.dispatch({
+      type: 'SET_COMMENTS',
+      payload: this.state.comments
+    });
     this.props.history.push('/review');
   };
 
   render() {
     return (
       <div>
-        <h3>How well are you understanding the content?</h3>
-        <form>
-          <input type="text" />
-          <button onClick={this.handleClick}>NEXT</button>
+        <h3>Any comments you want to leave?</h3>
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" onChange={this.handleChange} />
+          <button type="submit">NEXT</button>
         </form>
       </div>
     );
   }
 }
 
-export default Comments;
+export default connect()(Comments);

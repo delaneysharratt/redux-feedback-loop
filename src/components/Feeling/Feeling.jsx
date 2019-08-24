@@ -26,7 +26,7 @@ class Comments extends Component {
     return (
       <div>
         <h3>How are you feeling today?</h3>
-        <form>
+        <form onSubmit={this.handleClick}>
           <input
             type="radio"
             name="rating"
@@ -63,9 +63,7 @@ class Comments extends Component {
           />
           5
           <br />
-          <button type="submit" onClick={this.handleClick}>
-            NEXT
-          </button>
+          <button type="submit">NEXT</button>
         </form>
       </div>
     );
