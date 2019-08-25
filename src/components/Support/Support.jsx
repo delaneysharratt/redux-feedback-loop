@@ -15,11 +15,15 @@ class Support extends Component {
   handleClick = event => {
     event.preventDefault();
     console.log(this.state.support);
-    this.props.dispatch({
-      type: 'SET_SUPPORT',
-      payload: this.state.support
-    });
-    this.props.history.push('/comments');
+    if (this.state.support > 0) {
+      this.props.dispatch({
+        type: 'SET_SUPPORT',
+        payload: this.state.support
+      });
+      this.props.history.push('/comments');
+    } else {
+      alert('Please provide an answer.');
+    }
   };
 
   render() {

@@ -14,12 +14,16 @@ class Comments extends Component {
 
   handleClick = event => {
     event.preventDefault();
-    console.log(this.state.feeling);
-    this.props.dispatch({
-      type: 'SET_FEELING',
-      payload: this.state.feeling
-    });
-    this.props.history.push('/understanding');
+    console.log('Feeling:', this.state.feeling);
+    if (this.state.feeling > 0) {
+      this.props.dispatch({
+        type: 'SET_FEELING',
+        payload: this.state.feeling
+      });
+      this.props.history.push('/understanding');
+    } else {
+      alert('Please provide an answer.');
+    }
   };
 
   render() {
