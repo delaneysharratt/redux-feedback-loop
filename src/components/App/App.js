@@ -14,6 +14,7 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import Submit from '../Submit/Submit';
+import Admin from '../Admin/Admin';
 
 class App extends Component {
   render() {
@@ -30,6 +31,7 @@ class App extends Component {
           <Route path="/comments" component={Comments} />
           <Route path="/review" component={Review} />
           <Route path="/submit" component={Submit} />
+          <Route path="/admin" component={Admin} />
         </div>
       </Router>
     );

@@ -12,6 +12,10 @@ class Comments extends Component {
     });
   };
 
+  handlePrevious = () => {
+    this.props.history.push('/');
+  };
+
   handleClick = event => {
     event.preventDefault();
     console.log('Feeling:', this.state.feeling);
@@ -67,6 +71,7 @@ class Comments extends Component {
           />
           5
           <br />
+          <button onClick={this.handlePrevious}>BACK</button>
           <button type="submit">NEXT</button>
         </form>
       </div>
