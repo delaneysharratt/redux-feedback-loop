@@ -27,6 +27,10 @@ class Start extends Component {
     });
   };
 
+  handlePrevious = () => {
+    this.props.history.push('/comments');
+  };
+
   handleSubmit = () => {
     console.log('Submitting feedback:', this.state.feedback);
     axios
@@ -51,6 +55,7 @@ class Start extends Component {
           <h3>Support: {this.state.feedback.support}</h3>
           <h3>Comments: {this.state.feedback.comments}</h3>
         </div>
+        <button onClick={this.handlePrevious}>Back</button>
         <button onClick={this.handleSubmit}>Submit</button>
       </div>
     );

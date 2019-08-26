@@ -12,6 +12,10 @@ class Support extends Component {
     });
   };
 
+  handlePrevious = () => {
+    this.props.history.push('/understanding');
+  };
+
   handleClick = event => {
     event.preventDefault();
     console.log(this.state.support);
@@ -67,6 +71,7 @@ class Support extends Component {
           />
           5
           <br />
+          <button onClick={this.handlePrevious}>BACK </button>
           <button type="submit">NEXT</button>
         </form>
       </div>
